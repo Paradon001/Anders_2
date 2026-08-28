@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Anders_2.Views.MobileView"
+              Margin="0,0,0,-30"
+             Padding="0.5,2,0,2"
+             BackgroundColor="#000000">
+    <Grid>
+        
+            <Grid
+                RowDefinitions="10,*">
+                <Grid
+                    Grid.Row="0"
+                   >
+                    <Grid>
+                    <HorizontalStackLayout
+                        
+                        Spacing="10"
+                        HorizontalOptions="Center"
+                        Padding="20,20"
+                        Margin="10,10">
+                        <Button
+                        Text=""
+                        Padding="10,2"
+                        WidthRequest="1"
+                        HeightRequest="1"
+                         />
+                        <Button
+                        Text=""
+                        Padding="10,2"
+                            WidthRequest="1"
+                            HeightRequest="1"/>
+                        <Button
+                        Text=""
+                        Padding="10,2"
+                            WidthRequest="1"
+                            HeightRequest="1"/>
+                        <Button
+                        Text=""
+                        Padding="10,2"
+                            WidthRequest="1"
+                            HeightRequest="1"/>
+                    </HorizontalStackLayout>
+                    <Button
+                        HorizontalOptions="End"
+                        HeightRequest="25"/>
+                </Grid>
+                </Grid>
+
+            </Grid>
+        <Border
+            VerticalOptions="End"
+            StrokeShape="RoundRectangle 25,25,0,0"
+            Padding="1"
+            
+            >
+            <HorizontalStackLayout
+                        
+                        Spacing="20"
+                        HorizontalOptions="Center"
+                VerticalOptions="Start"
+                Margin="10,0,0,0"
+                Padding="1,30">
+                <Button
+                        Text=""
+                        Padding="10,2"
+                        WidthRequest="20"
+                        HeightRequest="20"
+                         />
+                <Button
+                        Text=""
+                        Padding="10,2"/>
+                <Button
+                        Text=""
+                        Padding="10,2"/>
+                <Button
+                        Text=""
+                        Padding="10,2"/>
+            </HorizontalStackLayout>
+
+        </Border>
+    </Grid>
+</ContentView>

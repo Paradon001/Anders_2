@@ -1,4 +1,5 @@
-﻿namespace Anders_2
+﻿
+namespace Anders_2
 {
     public partial class MainPage : ContentPage
     {
@@ -7,18 +8,28 @@
         public MainPage()
         {
             InitializeComponent();
+           
+        }
+        protected override void OnAppearing()
+        {
+            
+            base.OnAppearing();
+            // Detect device idiom at application startup
+            if (DeviceInfo.Current.Idiom == DeviceIdiom.Desktop)
+            {
+                // Inject the full desktop view layout
+                this.Content = new Views.ComputerView();
+            }
+            else
+            {
+                // Inject the mobile layout for Phones and Tablets
+                this.Content = new Views.MobileView();
+            }
         }
 
         private void OnCounterClicked(object? sender, EventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+          
         }
     }
 }

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Anders_2.Views.ComputerView"
+             BackgroundColor="#121212">
+    <Grid>
+        <Image
+           Source="19809.jpg"
+            Aspect="AspectFill"
+            />
+        <Grid
+            Margin=" 20">
+            <Grid>
+                <Border
+                    StrokeShape="25">
+                    
+                    <Grid
+                        ColumnDefinitions="100,*">
+                        <Border
+                            Grid.Column="0">
+                        <Grid>
+                            <VerticalStackLayout
+                                Spacing="15"
+                                Margin="1,1,1,1"
+                                Padding="20,100,20,30">
+
+                                    <Button
+                                        x:Name="Academic"
+                                        ImageSource="acadmicpic.jpg"
+                                HeightRequest="50"
+                                    MaximumWidthRequest="100"/>
+                                    <Button
+                                        x:Name="Spritual"
+                                        ImageSource="acadmicpic.jpg"
+                                HeightRequest="50"
+                                    MaximumWidthRequest="100"/>
+
+
+                                    <Button
+                                        ImageSource="acadmicpic.jpg"
+                                HeightRequest="50"
+                                    MaximumWidthRequest="100"/>
+
+                                    <Button
+                                        ImageSource="acadmicpic.jpg"
+                                HeightRequest="50"
+                                    MaximumWidthRequest="100"/>
+
+                                </VerticalStackLayout>
+
+                            </Grid>
+                        </Border>
+                                 <Grid
+                                    Grid.Column="1"
+                                    x:Name="MainContentContainer">
+
+                                </Grid>
+
+                    </Grid>
+                                    <Border.Shadow>
+                    <Shadow
+                        Brush="#0f32bf"
+                        Opacity="1"
+                        Offset="0,1"
+                        Radius="10"/>
+                </Border.Shadow>
+                    
+                </Border>
+               
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentView>
