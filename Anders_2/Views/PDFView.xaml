@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Anders_2.Views.PDFView">
+    <Grid>
+        <VerticalStackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+            <Border
+               StrokeShape="10">
+
+                <Button
+                Text="+"
+                VerticalOptions="Center"
+                WidthRequest="100"
+                HeightRequest="100"
+                Clicked="OnAddFileClicked"/>
+            </Border>
+            <Label
+                Text="Add PDF File"
+                VerticalOptions="End"
+                HorizontalOptions="Center"/>
+            
+        </VerticalStackLayout>
+        <Border
+            x:Name="PDFborder"
+           IsVisible="False"
+            WidthRequest="500"
+            HeightRequest="500"
+            StrokeThickness="0"
+            Background="Black">
+            <Grid
+                RowDefinitions="20,20,*,50">
+                <Label
+                    Text="PDF"
+                    Grid.Row="0"/>
+                <Label
+                    x:Name="selectedPDFname"
+                    Grid.Row="1"/>
+                <HorizontalStackLayout
+                    Spacing="15"
+                    Grid.Row="2"
+                    Padding="10">
+                    <Button
+                        Text="View"
+                        Clicked="OnViewClicked"/>
+                    <Button/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout
+                    VerticalOptions="End"
+                    Spacing="5">
+                    <Button/>
+                    <Button/>
+                </HorizontalStackLayout>
+                
+            </Grid>
+        </Border>
+        <Image
+            Source="acadmicpic.jpg"
+            IsVisible="False"
+            x:Name="AcademicImage"/>
+    </Grid>
+</ContentView>

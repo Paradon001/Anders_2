@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Anders_2.DashBoardHomeView"
-             xmlns:vm="clr-namespace:Anders_2.ViewModels">
-    <Grid>
+             x:Class="Anders_2.Views.MobileDashboardHomeView">
+
+    <Grid
+       >
         <Grid
             RowSpacing="10"
             Margin="20"
@@ -17,6 +18,7 @@
                     IsSwipeEnabled="True"
                     Loop="False"
                     PeekAreaInsets="0"
+                    
                     >
                     <CarouselView.ItemsLayout>
                         <LinearItemsLayout ItemSpacing="20"
@@ -28,28 +30,27 @@
                                 Margin="10,5"
                                 StrokeShape="25"
                                 >
-                            <Grid>
-                                <Image
+                                <Grid>
+                                    <Image
                                     Source="{Binding Image}"
                                     Aspect="AspectFill"
                                     />
-                                <VerticalStackLayout>
-                                    <Label
+                                    <VerticalStackLayout>
+                                        <Label
                                      Text="{Binding Title}"
                                         FontSize="Header"
                                         Margin="20"
                                         VerticalTextAlignment="End"/>
-                                <Label
+                                        <Label
                                         Text="{Binding Description}"
                                         FontSize="Body"
                                         Margin="20"/>
-                                </VerticalStackLayout>
-                            </Grid>
+                                    </VerticalStackLayout>
+                                </Grid>
                             </Border>
                         </DataTemplate>
                     </CarouselView.ItemTemplate>
                 </CarouselView>
-                
                 <Border.Shadow>
                     <Shadow
                         Offset="5,5" Opacity="0.5" Radius="0"/>

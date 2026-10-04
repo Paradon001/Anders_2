@@ -2,48 +2,67 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Anders_2.Views.ComputerView"
-             BackgroundColor="#121212">
+          xmlns:external="clr-namespace:Anders_2.Views;assembly=Anders_2"
+             BackgroundColor="#121212"
+           xmlns:vm="clr-namespace:Anders_2.ViewModels">
+
     <Grid>
         <Image
            Source="19809.jpg"
             Aspect="AspectFill"
             />
         <Grid
+            
             Margin=" 20">
             <Grid>
                 <Border
-                    StrokeShape="25">
+                    StrokeShape="25"
+                    StrokeThickness="0.35">
                     
                     <Grid
-                        ColumnDefinitions="100,*">
+                        ColumnDefinitions="70,*">
                         <Border
-                            Grid.Column="0">
+                            Grid.Column="0"
+                            StrokeThickness="0.35">
                         <Grid>
                             <VerticalStackLayout
                                 Spacing="15"
                                 Margin="1,1,1,1"
-                                Padding="20,100,20,30">
+                                Padding="10,100,10,10">
 
                                     <Button
                                         x:Name="Academic"
+                                        Clicked="OnAcademicsClicked"
                                         ImageSource="acadmicpic.jpg"
-                                HeightRequest="50"
+                                       HeightRequest="36"
+                                         Padding="12"
+                                        BackgroundColor="Transparent"
+                                         CornerRadius="25"
                                     MaximumWidthRequest="100"/>
                                     <Button
                                         x:Name="Spritual"
                                         ImageSource="acadmicpic.jpg"
-                                HeightRequest="50"
+                                HeightRequest="36"
+                                         Padding="12"
+                                        CornerRadius="25"
+                                        BackgroundColor="Transparent"
                                     MaximumWidthRequest="100"/>
 
 
                                     <Button
                                         ImageSource="acadmicpic.jpg"
-                                HeightRequest="50"
+                                HeightRequest="36"
+                                        Padding="12"
+                                         CornerRadius="25"
+                                        BackgroundColor="Transparent"
                                     MaximumWidthRequest="100"/>
 
                                     <Button
                                         ImageSource="acadmicpic.jpg"
-                                HeightRequest="50"
+                                HeightRequest="36"
+                                         Padding="12"
+                                         CornerRadius="25"
+                                        Background="Transparent"
                                     MaximumWidthRequest="100"/>
 
                                 </VerticalStackLayout>
@@ -53,18 +72,17 @@
                                  <Grid
                                     Grid.Column="1"
                                     x:Name="MainContentContainer">
-
-                                </Grid>
+                                     
+                        </Grid>
 
                     </Grid>
-                                    <Border.Shadow>
+                    <Border.Shadow>
                     <Shadow
                         Brush="#0f32bf"
-                        Opacity="1"
+                        Opacity="0.2"
                         Offset="0,1"
                         Radius="10"/>
                 </Border.Shadow>
-                    
                 </Border>
                
             </Grid>

@@ -1,18 +1,35 @@
+using Anders_2.ViewModels;
+using Microsoft.Maui.Dispatching;
+
+
 namespace Anders_2.Views;
 
+
 public partial class ComputerView : ContentView
+
 {
-	public ComputerView()
+    public static ComputerView Instance { get; private set; }
+
+    public Grid mainComputerView { get; private set; }
+
+    public ComputerView()
     {
         InitializeComponent();
 
         // Load the default view on startup
         SwitchToView(new DashBoardHomeView());
+
+
+        Instance = this;
     }
 
-
+    private void OnAcademicsClicked(object sender, EventArgs e)
+    {
+        SwitchToView(new AcademicView());
+        
+    }
     // Dynamic, animated view-swapper function
-    private async void SwitchToView(ContentView newView)
+    public async void SwitchToView(ContentView newView)
     {
         // 1. If there's an active view, smoothly fade it out first
         if (MainContentContainer.Children.Count > 0)
@@ -28,21 +45,18 @@ public partial class ComputerView : ContentView
             }
         }
 
-        // 2. Clear out old layout nodes completely
-        MainContentContainer.Children.Clear();
-
-        // 3. Prepare the new layout state (start invisible and offset slightly to the right)
         newView.Opacity = 0;
         newView.TranslationX = 20;
 
-        // 4. Inject it into the container frame
-        MainContentContainer.Children.Add(newView);
-
-        // 5. Execute smooth slide-in animation
         await Task.WhenAll(
             newView.FadeToAsync(1, 250, Easing.CubicOut),
             newView.TranslateToAsync(0, 0, 250, Easing.CubicOut)
         );
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+           MainContentContainer.Children.Clear();
+            MainContentContainer.Children.Add(newView);
+        });
     }
 }
 
